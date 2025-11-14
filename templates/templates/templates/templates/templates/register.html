@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}ثبت‌نام - TaskMaster{% endblock %}
+{% block content %}
+<h2>ثبت‌نام</h2>
+<form method="post">
+  <input name="username" placeholder="نام کاربری">
+  <input type="password" name="password" placeholder="رمز عبور">
+  <button>ثبت‌نام</button>
+</form>
+<p>از قبل حساب داری؟ <a href="{{ url_for('login') }}">ورود</a></p>
+{% endblock %}
