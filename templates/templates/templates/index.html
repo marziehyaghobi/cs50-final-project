@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}تسک‌ها - TaskMaster{% endblock %}
+{% block content %}
+<form method="get" class="search">
+  <input name="q" placeholder="جستجوی تسک..." value="{{ q or '' }}">
+  <button>جستجو</button>
+</form>
+
+<form method="post" action="{{ url_for('add_task') }}" class="add">
+  <input name="title" placeholder="تسک جدید...">
+  <button>افزودن</button>
+</form>
+
+<ul class="tasks">
+  {% for t in tasks %}
+    <li class="{{ 'done' if t['is_done'] else '' }}">
+      <form method="post" action="{{ url_for('toggle_task', task_id=t['id']) }}" style="display:inline;">
+        <button title="تغییر وضعیت">{{ '✔️' if t['is_done'] else '○' }}</button>
+      </form>
+      <span>{{ t['title'] }}</span>
+      <form method="post" action="{{ url_for('delete_task', task_id=t['id']) }}" style="display:inline;">
+        <button title="حذف">🗑</button>
+      </form>
+    </li>
+  {% else %}
+    <li>فعلاً چیزی نداری! یکی اضافه کن.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
