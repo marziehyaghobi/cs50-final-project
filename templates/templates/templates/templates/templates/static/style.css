@@ -1,0 +1,13 @@
+body { font-family: sans-serif; margin: 0 auto; max-width: 720px; padding: 1rem; }
+header { display: flex; justify-content: space-between; align-items: center; }
+h1 a { text-decoration: none; }
+.flashes { list-style: none; padding: 0; }
+.flashes li { padding: .5rem; margin: .25rem 0; border-radius: 6px; }
+.flashes .error { background: #ffd8d8; }
+.flashes .success { background: #d7ffd8; }
+.search input, .add input { padding: .5rem; width: 70%; }
+.search button, .add button { padding: .5rem .75rem; }
+.tasks { list-style: none; padding: 0; }
+.tasks li { display: flex; gap: .5rem; align-items: center; padding: .5rem 0; border-bottom: 1px solid #eee; }
+.tasks li.done span { text-decoration: line-through; opacity: .6; }
+button { cursor: pointer; }
