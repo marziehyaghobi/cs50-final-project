@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}ورود - TaskMaster{% endblock %}
+{% block content %}
+<h2>ورود</h2>
+<form method="post">
+  <input name="username" placeholder="نام کاربری">
+  <input type="password" name="password" placeholder="رمز عبور">
+  <button>ورود</button>
+</form>
+<p>حساب نداری؟ <a href="{{ url_for('register') }}">ثبت‌نام</a></p>
+{% endblock %}
